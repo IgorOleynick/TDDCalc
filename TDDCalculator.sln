@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{8120DE42-3ADA-4BC6-A3D5-95816FB7D26A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication", "ConsoleApplication\ConsoleApplication.csproj", "{65F35835-67B9-4277-A78C-70C8DFFA9DB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{F6631961-5D26-4180-841F-DD76BFDA861F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8120DE42-3ADA-4BC6-A3D5-95816FB7D26A}.Debug|x86.ActiveCfg = Debug|x86
+		{8120DE42-3ADA-4BC6-A3D5-95816FB7D26A}.Debug|x86.Build.0 = Debug|x86
+		{8120DE42-3ADA-4BC6-A3D5-95816FB7D26A}.Release|x86.ActiveCfg = Release|x86
+		{8120DE42-3ADA-4BC6-A3D5-95816FB7D26A}.Release|x86.Build.0 = Release|x86
+		{65F35835-67B9-4277-A78C-70C8DFFA9DB6}.Debug|x86.ActiveCfg = Debug|x86
+		{65F35835-67B9-4277-A78C-70C8DFFA9DB6}.Debug|x86.Build.0 = Debug|x86
+		{65F35835-67B9-4277-A78C-70C8DFFA9DB6}.Release|x86.ActiveCfg = Release|x86
+		{65F35835-67B9-4277-A78C-70C8DFFA9DB6}.Release|x86.Build.0 = Release|x86
+		{F6631961-5D26-4180-841F-DD76BFDA861F}.Debug|x86.ActiveCfg = Debug|x86
+		{F6631961-5D26-4180-841F-DD76BFDA861F}.Debug|x86.Build.0 = Debug|x86
+		{F6631961-5D26-4180-841F-DD76BFDA861F}.Release|x86.ActiveCfg = Release|x86
+		{F6631961-5D26-4180-841F-DD76BFDA861F}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
