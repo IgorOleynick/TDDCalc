@@ -14,8 +14,25 @@ namespace Tests
         {
             string[] args = {"1", "+", "2"};
             var parser = new Parser(args);
-            double result = Calculator.Add(parser.firstOperand, parser.secondOperand);
-            Assert.Equal(3, result);
+            object result = null;
+            if (parser.OperatorType == OperatorTypes.add)
+            {
+                 result = Calculator.Add(parser.FirstOperand, parser.SecondOperand);
+            }
+            Assert.Equal(3.0, result);
+        }
+
+        [Fact]
+        public void Deduct()
+        {
+            string[] args = { "2", "-", "1" };
+            var parser = new Parser(args);
+            object result = null;
+            if (parser.OperatorType == OperatorTypes.deduct)
+            {
+                result = Calculator.Deduct(parser.FirstOperand, parser.SecondOperand);
+            }
+            Assert.Equal(1.0, result);
         }
     }
 }

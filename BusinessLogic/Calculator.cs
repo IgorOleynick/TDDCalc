@@ -47,6 +47,21 @@ namespace BusinessLogic
                     throw new ArgumentOutOfRangeException("Operator error");
             }
         }
+
+        public double FirstOperand
+        {
+            get { return firstOperand; }
+        }
+
+        public OperatorTypes OperatorType
+        {
+            get { return operatorType; }
+        }
+
+        public double SecondOperand
+        {
+            get { return secondOperand; }
+        }
     }
 
     public class Calculator
