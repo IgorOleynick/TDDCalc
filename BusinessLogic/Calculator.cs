@@ -73,7 +73,17 @@ namespace BusinessLogic
 
         public static double Deduct(double firstOperand, double secondOperand)
         {
-            throw new NotImplementedException();
+            return firstOperand - secondOperand;
+        }
+
+        public static double Multiply(double firstOperand, double secondOperand)
+        {
+            return firstOperand*secondOperand;
+        }
+
+        public static double Divide(double firstOperand, double secondOperand)
+        {
+            return firstOperand/secondOperand;
         }
     }
 }
