@@ -10,25 +10,38 @@ namespace BusinessLogic
         }
     }
 
+    public enum OperatorTypes
+    {
+        add,
+        deduct,
+        multiply,
+        divide
+    }
+
     public class Parser
     {
-        public double firstOperand;
-        public double secondOperand;
+        private double firstOperand;
+        private double secondOperand;
+        private OperatorTypes operatorType;
 
         public Parser(string[] args)
         {
             firstOperand = Convert.ToDouble(args[0]);
             secondOperand = Convert.ToDouble(args[2]);
+
             switch (args[1])
             {
                 case "+":
-                    Calculator.Add(firstOperand, secondOperand);
+                    operatorType = OperatorTypes.add;
                     break;
                 case "-":
+                    operatorType = OperatorTypes.deduct;
                     break;
                 case "*":
+                    operatorType = OperatorTypes.multiply;
                     break;
                 case "/":
+                    operatorType = OperatorTypes.divide;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("Operator error");
@@ -41,6 +54,11 @@ namespace BusinessLogic
         public static double Add(double firstOperand, double secondOperand)
         {
             return firstOperand + secondOperand;
+        }
+
+        public static double Deduct(double firstOperand, double secondOperand)
+        {
+            throw new NotImplementedException();
         }
     }
 }
