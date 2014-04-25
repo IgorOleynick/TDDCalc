@@ -12,9 +12,10 @@ namespace Tests
         [Fact]
         public void Add()
         {
-            var calculator = new Calculator();
-            int result = Calculator.Add();
-            Assert.Equal(4, result);
+            string[] args = {"1", "+", "2"};
+            var parser = new Parser(args);
+            double result = Calculator.Add(parser.firstOperand, parser.secondOperand);
+            Assert.Equal(3, result);
         }
     }
 }
