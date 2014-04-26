@@ -13,36 +13,36 @@ namespace Tests
         [Fact]
         public void Add()
         {
-            string[] args = {"1", "+", "2"};
+            string args = "1+2";
             var parser = new Parser(args);
-            var result = Calculator.Calulate(parser);
+            var result = Calculator.Calculate(parser);
             Assert.Equal(3.0, result);
         }
 
         [Fact]
         public void Deduct()
         {
-            string[] args = { "2", "-", "1" };
+            string args = "2-1";
             var parser = new Parser(args);
-            var result = Calculator.Calulate(parser);
+            var result = Calculator.Calculate(parser);
             Assert.Equal(1.0, result);
         }
 
         [Fact]
         public void Multiply()
         {
-            string[] args = { "2", "*", "3" };
+            string args = "2*3";
             var parser = new Parser(args);
-            var result = Calculator.Calulate(parser);
+            var result = Calculator.Calculate(parser);
             Assert.Equal(6.0, result);
         }
 
         [Fact]
         public void Divide()
         {
-            string[] args = { "6", "/", "2" };
+            string args = "6/2";
             var parser = new Parser(args);
-            var result = Calculator.Calulate(parser);
+            var result = Calculator.Calculate(parser);
             Assert.Equal(3.0, result);
         }
     }

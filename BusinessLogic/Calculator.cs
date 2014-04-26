@@ -12,74 +12,74 @@ namespace BusinessLogic
 
     public enum OperatorTypes
     {
-        add,
-        deduct,
-        multiply,
-        divide
+        Add,
+        Deduct,
+        Multiply,
+        Divide
     }
 
     public class Parser
     {
-        private double firstOperand;
-        private double secondOperand;
-        private OperatorTypes operatorType;
+        private readonly double _firstOperand;
+        private readonly double _secondOperand;
+        private readonly OperatorTypes _operatorType;
 
-        public Parser(string[] args)
+        public Parser(string args)
         {
-            firstOperand = Convert.ToDouble(args[0]);
-            secondOperand = Convert.ToDouble(args[2]);
+            _firstOperand = Convert.ToDouble(args[0].ToString());
+            _secondOperand = Convert.ToDouble(args[2].ToString());
 
             switch (args[1])
             {
-                case "+":
-                    operatorType = OperatorTypes.add;
+                case '+':
+                    _operatorType = OperatorTypes.Add;
                     break;
-                case "-":
-                    operatorType = OperatorTypes.deduct;
+                case '-':
+                    _operatorType = OperatorTypes.Deduct;
                     break;
-                case "*":
-                    operatorType = OperatorTypes.multiply;
+                case '*':
+                    _operatorType = OperatorTypes.Multiply;
                     break;
-                case "/":
-                    operatorType = OperatorTypes.divide;
+                case '/':
+                    _operatorType = OperatorTypes.Divide;
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException("Operator error");
+                    throw new Exception("Operator error");
             }
         }
 
         public double FirstOperand
         {
-            get { return firstOperand; }
+            get { return _firstOperand; }
         }
 
         public OperatorTypes OperatorType
         {
-            get { return operatorType; }
+            get { return _operatorType; }
         }
 
         public double SecondOperand
         {
-            get { return secondOperand; }
+            get { return _secondOperand; }
         }
     }
 
     public class Calculator
     {
-        public static double? Calulate(Parser expression)
+        public static double? Calculate(Parser expression)
         {
             switch (expression.OperatorType)
             {
-                case OperatorTypes.add:
+                case OperatorTypes.Add:
                     return Add(expression.FirstOperand, expression.SecondOperand);
-                case OperatorTypes.deduct:
+                case OperatorTypes.Deduct:
                     return Deduct(expression.FirstOperand, expression.SecondOperand);
-                case OperatorTypes.multiply:
+                case OperatorTypes.Multiply:
                     return Multiply(expression.FirstOperand, expression.SecondOperand);
-                case OperatorTypes.divide:
+                case OperatorTypes.Divide:
                     return Divide(expression.FirstOperand, expression.SecondOperand);
                 default:
-                    throw new ArgumentOutOfRangeException("Operator error");
+                    throw new Exception("Operator error");
             }
         }
 
