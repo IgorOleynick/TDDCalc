@@ -20,48 +20,35 @@ namespace BusinessLogic
 
     public class Parser
     {
-        private readonly double _firstOperand;
-        private readonly double _secondOperand;
-        private readonly OperatorTypes _operatorType;
-
         public Parser(string args)
         {
-            _firstOperand = Convert.ToDouble(args[0].ToString());
-            _secondOperand = Convert.ToDouble(args[2].ToString());
+            FirstOperand = Convert.ToDouble(args[0].ToString());
+            SecondOperand = Convert.ToDouble(args[2].ToString());
 
             switch (args[1])
             {
                 case '+':
-                    _operatorType = OperatorTypes.Add;
+                    OperatorType = OperatorTypes.Add;
                     break;
                 case '-':
-                    _operatorType = OperatorTypes.Deduct;
+                    OperatorType = OperatorTypes.Deduct;
                     break;
                 case '*':
-                    _operatorType = OperatorTypes.Multiply;
+                    OperatorType = OperatorTypes.Multiply;
                     break;
                 case '/':
-                    _operatorType = OperatorTypes.Divide;
+                    OperatorType = OperatorTypes.Divide;
                     break;
                 default:
                     throw new Exception("Operator error");
             }
         }
 
-        public double FirstOperand
-        {
-            get { return _firstOperand; }
-        }
+        public double FirstOperand { get; private set; }
 
-        public OperatorTypes OperatorType
-        {
-            get { return _operatorType; }
-        }
+        public OperatorTypes OperatorType { get; private set; }
 
-        public double SecondOperand
-        {
-            get { return _secondOperand; }
-        }
+        public double SecondOperand { get; private set; }
     }
 
     public class Calculator
