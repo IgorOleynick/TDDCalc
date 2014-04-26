@@ -66,22 +66,39 @@ namespace BusinessLogic
 
     public class Calculator
     {
-        public static double Add(double firstOperand, double secondOperand)
+        public static double? Calulate(Parser expression)
+        {
+            switch (expression.OperatorType)
+            {
+                case OperatorTypes.add:
+                    return Add(expression.FirstOperand, expression.SecondOperand);
+                case OperatorTypes.deduct:
+                    return Deduct(expression.FirstOperand, expression.SecondOperand);
+                case OperatorTypes.multiply:
+                    return Multiply(expression.FirstOperand, expression.SecondOperand);
+                case OperatorTypes.divide:
+                    return Divide(expression.FirstOperand, expression.SecondOperand);
+                default:
+                    throw new ArgumentOutOfRangeException("Operator error");
+            }
+        }
+
+        private static double Add(double firstOperand, double secondOperand)
         {
             return firstOperand + secondOperand;
         }
 
-        public static double Deduct(double firstOperand, double secondOperand)
+        private static double Deduct(double firstOperand, double secondOperand)
         {
             return firstOperand - secondOperand;
         }
 
-        public static double Multiply(double firstOperand, double secondOperand)
+        private static double Multiply(double firstOperand, double secondOperand)
         {
             return firstOperand*secondOperand;
         }
 
-        public static double Divide(double firstOperand, double secondOperand)
+        private static double Divide(double firstOperand, double secondOperand)
         {
             return firstOperand/secondOperand;
         }

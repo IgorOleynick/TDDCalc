@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System;
+using Xunit;
 using BusinessLogic;
 
 namespace Tests
@@ -14,11 +15,7 @@ namespace Tests
         {
             string[] args = {"1", "+", "2"};
             var parser = new Parser(args);
-            object result = null;
-            if (parser.OperatorType == OperatorTypes.add)
-            {
-                 result = Calculator.Add(parser.FirstOperand, parser.SecondOperand);
-            }
+            var result = Calculator.Calulate(parser);
             Assert.Equal(3.0, result);
         }
 
@@ -27,11 +24,7 @@ namespace Tests
         {
             string[] args = { "2", "-", "1" };
             var parser = new Parser(args);
-            object result = null;
-            if (parser.OperatorType == OperatorTypes.deduct)
-            {
-                result = Calculator.Deduct(parser.FirstOperand, parser.SecondOperand);
-            }
+            var result = Calculator.Calulate(parser);
             Assert.Equal(1.0, result);
         }
 
@@ -40,11 +33,7 @@ namespace Tests
         {
             string[] args = { "2", "*", "3" };
             var parser = new Parser(args);
-            object result = null;
-            if (parser.OperatorType == OperatorTypes.multiply)
-            {
-                result = Calculator.Multiply(parser.FirstOperand, parser.SecondOperand);
-            }
+            var result = Calculator.Calulate(parser);
             Assert.Equal(6.0, result);
         }
 
@@ -53,11 +42,7 @@ namespace Tests
         {
             string[] args = { "6", "/", "2" };
             var parser = new Parser(args);
-            object result = null;
-            if (parser.OperatorType == OperatorTypes.divide)
-            {
-                result = Calculator.Divide(parser.FirstOperand, parser.SecondOperand);
-            }
+            var result = Calculator.Calulate(parser);
             Assert.Equal(3.0, result);
         }
     }
